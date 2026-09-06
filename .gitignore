@@ -1,85 +1,136 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.buildlog/
-.history
-.svn/
-migrate_working_dir/
+# ═══════════════════════════════════════════════════════════════
+#  FlixyGo - Professional .gitignore for Flutter Project
+#  Generated for: Flutter, Dart, Android, iOS, Windows, Web
+# ═══════════════════════════════════════════════════════════════
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
+# ───────────────────────────────────────────────────────────────
+#  🔐 SECURITY - NEVER COMMIT THESE!
+# ───────────────────────────────────────────────────────────────
+# Supabase credentials
+supabase-keys.json
+**/supabase-keys.json
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-.vscode/
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.staging
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# API Keys & Secrets
+**/secrets.json
+**/credentials.json
+**/api-keys.json
+google-services.json.backup
+firebase-adminsdk-*.json
+
+# Keystores (Android signing)
+*.jks
+*.keystore
+key.properties
+upload-keystore.jks
+
+# Private keys
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ───────────────────────────────────────────────────────────────
+#  📱 FLUTTER & DART
+# ───────────────────────────────────────────────────────────────
+# Build outputs
+/build/
+**/build/
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
 .pub-cache/
 .pub/
-/build/
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-
-# Supabase keys - NEVER commit these!
-supabase-keys.json
-.env
-.env.local
-.env.*.local
-
-# Windows build output
-/windows/flutter/
 
 # Generated files
 *.g.dart
 *.freezed.dart
+*.gr.dart
+*.config.dart
+**/generated_plugin_registrant.dart
+/lib/generated/
 
-# Coverage
-coverage/
-*.lcov
+# Flutter version & SDK
+.flutter-version
+.fvm/
+flutter_*.log
 
-# Exceptions
-!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+# Symbolication & obfuscation
+app.*.symbols
+app.*.map.json
 
-# Build outputs
-*.apk
-*.aab
-*.ipa
-*.exe
-*.msix
-*.zip
+# Flutter/Dart analysis
+.dart_tool/
+analysis_options_snapshot.yaml
 
-# Gradle files
+# ───────────────────────────────────────────────────────────────
+#  🤖 ANDROID
+# ───────────────────────────────────────────────────────────────
+# Gradle
 .gradle/
-/android/app/build/
-/android/build/
 /android/.gradle/
-/android/local.properties
+/android/build/
+/android/app/build/
+/android/app/debug/
+/android/app/profile/
+/android/app/release/
 /android/gradle.properties.bak
+gradle-wrapper.jar
 
-# iOS/macOS
+# Local configuration
+/android/local.properties
+/android/key.properties
+/android/**/key.properties
+
+# Signing files
+/android/app/*.jks
+/android/app/*.keystore
+
+# Android Studio
+/android/captures/
+/android/.externalNativeBuild/
+/android/.cxx/
+/android/app/google-services.json.backup
+
+# ProGuard
+/android/app/proguard/
+/android/app/proguard-rules.pro.bak
+
+# NDK
+/android/obj/
+
+# ───────────────────────────────────────────────────────────────
+#  🍎 iOS / macOS
+# ───────────────────────────────────────────────────────────────
+# Pods
+**/ios/Pods/
+**/ios/Podfile.lock
+**/ios/.symlinks/
+**/macos/Pods/
+**/macos/Podfile.lock
+
+# Flutter-generated
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+
+# Xcode
 **/ios/**/*.mode1v3
 **/ios/**/*.mode2v3
 **/ios/**/*.moved-aside
@@ -88,70 +139,234 @@ coverage/
 **/ios/**/*sync/
 **/ios/**/.sconsign.dblite
 **/ios/**/.tags*
-**/ios/**/.vagrant/
 **/ios/**/DerivedData/
+**/ios/**/xcuserdata/
+**/ios/**/.vagrant/
 **/ios/**/Icon?
-**/ios/**/Pods/
-**/ios/**/.symlinks/
 **/ios/**/profile
-**/ios/**/xcuserdata
 **/ios/.generated/
-**/ios/Flutter/App.framework
-**/ios/Flutter/Flutter.framework
-**/ios/Flutter/Flutter.podspec
-**/ios/Flutter/Generated.xcconfig
-**/ios/Flutter/ephemeral
-**/ios/Flutter/app.flx
-**/ios/Flutter/app.zip
-**/ios/Flutter/flutter_assets/
-**/ios/Flutter/flutter_export_environment.sh
 **/ios/ServiceDefinitions.json
-**/ios/Runner/GeneratedPluginRegistrant.*
-**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/ios/Runner.xcworkspace/xcshareddata/
 
-# Web
+# macOS-specific
+.DS_Store
+**/macos/Flutter/ephemeral/
+**/macos/.symlinks/
+
+# ───────────────────────────────────────────────────────────────
+#  🪟 WINDOWS
+# ───────────────────────────────────────────────────────────────
+# Flutter Windows build
+/windows/flutter/
+/windows/runner/Debug/
+/windows/runner/Release/
+/windows/CMakeFiles/
+/windows/cmake_install.cmake
+/windows/CMakeCache.txt
+/windows/*.vcxproj.user
+/windows/x64/
+
+# Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+
+# Windows OS
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# ───────────────────────────────────────────────────────────────
+#  🌐 WEB
+# ───────────────────────────────────────────────────────────────
 /web/*.js
 /web/*.js_
 /web/*.js.deps
 /web/*.js.map
+/web/main.dart.js
+/web/manifest.json.backup
 
-# Documentation build
-doc/api/
+# ───────────────────────────────────────────────────────────────
+#  🧪 TESTING & COVERAGE
+# ───────────────────────────────────────────────────────────────
+coverage/
+*.lcov
+test/.test_coverage.dart
+/test_driver/*.log
 
-# Temporary files
-*.tmp
-*.temp
-*.bak
-*~
+# Integration test screenshots
+/screenshots/
+/test_screenshots/
 
-# Database files
-*.db
-*.sqlite
-*.sqlite3
+# ───────────────────────────────────────────────────────────────
+#  💻 IDE & EDITORS
+# ───────────────────────────────────────────────────────────────
+# IntelliJ IDEA / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+/android/.idea/
+/android/*.iml
+captures/
+.externalNativeBuild/
+.cxx/
 
-# Log files
-*.log
-logs/
+# VS Code
+.vscode/
+*.code-workspace
 
-# Crash logs
-hs_err_pid*
-crash_log.txt
+# Exceptions for VS Code (uncomment if you want to share settings)
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
 
-# IDE specific
+# Atom
+.atom/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Eclipse
 .project
 .classpath
 .c9/
 *.launch
 .settings/
-*.sublime-workspace
+.metadata
+.recommenders/
 
-# OS specific
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-*.cab
-*.msi
-*.msm
-*.msp
-*.lnk
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+.dir-locals.el
+
+# ───────────────────────────────────────────────────────────────
+#  📦 DEPENDENCIES & PACKAGES
+# ───────────────────────────────────────────────────────────────
+# Node modules (if using any web tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Bower
+bower_components/
+
+# ───────────────────────────────────────────────────────────────
+#  📝 DOCUMENTATION & LOGS
+# ───────────────────────────────────────────────────────────────
+# Documentation build output
+doc/api/
+**/doc/api/
+.dartdoc/
+
+# Log files
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+flutter_*.log
+
+# Crash logs
+hs_err_pid*
+crash_log.txt
+crash_*.log
+
+# ───────────────────────────────────────────────────────────────
+#  🗄️ DATABASES & STORAGE
+# ───────────────────────────────────────────────────────────────
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.realm
+*.mmdb
+
+# ───────────────────────────────────────────────────────────────
+#  🔧 BUILD & COMPILATION
+# ───────────────────────────────────────────────────────────────
+# APK/AAB files (Android)
+*.apk
+*.ap_
+*.aab
+
+# iOS builds
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Windows builds
+*.exe
+*.msix
+
+# Tar archives
+*.tar.gz
+*.zip
+*.rar
+
+# ───────────────────────────────────────────────────────────────
+#  🧹 TEMPORARY & CACHE FILES
+# ───────────────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.bak
+*~
+*.cache
+.history/
+.buildlog/
+.svn/
+migrate_working_dir/
+
+# ───────────────────────────────────────────────────────────────
+#  🎨 ASSETS & MEDIA (Optional - remove if needed)
+# ───────────────────────────────────────────────────────────────
+# Uncomment if you want to ignore large media files
+# *.mov
+# *.mp4
+# *.avi
+# *.psd
+# *.ai
+# *.sketch
+
+# ───────────────────────────────────────────────────────────────
+#  ✅ EXCEPTIONS - Files to ALWAYS include
+# ───────────────────────────────────────────────────────────────
+# Flutter tools test data
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+# Keep README and documentation
+!README.md
+!CONTRIBUTING.md
+!LICENSE
+
+# Keep example environment file (template only)
+!.env.example
+!supabase-keys.json.example
+
+# ═══════════════════════════════════════════════════════════════
+#  End of .gitignore
+# ═══════════════════════════════════════════════════════════════

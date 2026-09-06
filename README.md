@@ -1,10 +1,18 @@
 <div align="center">
 
+<img src="assets/images/icon.png" alt="FlixyGo Logo" width="180" />
+
 # 🎬 FlixyGo
 
-### Your Ultimate Streaming Platform for Movies, K-Dramas & Anime
+<h3>🌟 Your Ultimate Streaming Platform for Movies, K-Dramas & Anime 🌟</h3>
 
-<img src="assets/images/icon.png" alt="FlixyGo Logo" width="150" />
+<p>
+  <img src="https://img.shields.io/badge/Version-1.0.0-brightgreen?style=for-the-badge" alt="Version" />
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
+</p>
+
+### 🚀 Built With
 
 [![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev/)
 [![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev/)
@@ -12,19 +20,37 @@
 [![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/windows)
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.android.com/)
 
-<p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-screenshots">Screenshots</a> •
-  <a href="#-installation">Installation</a> •
-  <a href="#-tech-stack">Tech Stack</a> •
-  <a href="#-team">Team</a>
+---
+
+### 📖 Quick Navigation
+
+<p>
+  <a href="#-features"><b>✨ Features</b></a> •
+  <a href="#-screenshots"><b>📸 Screenshots</b></a> •
+  <a href="#-installation"><b>🚀 Installation</b></a> •
+  <a href="#-tech-stack"><b>🛠️ Tech Stack</b></a> •
+  <a href="#-team"><b>👥 Team</b></a> •
+  <a href="#-contributing"><b>🤝 Contributing</b></a>
 </p>
 
 ---
 
-**Experience seamless streaming with an elegant interface designed for movie lovers, K-Drama enthusiasts, and anime fans.**
+<p align="center">
+  <b>Experience seamless streaming with an elegant interface designed for<br/>
+  movie lovers, K-Drama enthusiasts, and anime fans.</b>
+</p>
 
-[Download APK](https://github.com/yourusername/flixygo/releases) | [Report Bug](https://github.com/yourusername/flixygo/issues) | [Request Feature](https://github.com/yourusername/flixygo/issues)
+<p>
+  <a href="https://github.com/yourusername/flixygo/releases">
+    <img src="https://img.shields.io/badge/Download-APK-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
+  </a>
+  <a href="https://github.com/yourusername/flixygo/issues">
+    <img src="https://img.shields.io/badge/Report-Bug-red?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="https://github.com/yourusername/flixygo/issues">
+    <img src="https://img.shields.io/badge/Request-Feature-blue?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</p>
 
 </div>
 
@@ -32,39 +58,68 @@
 
 ## ✨ Features
 
-### 🎥 **Content Library**
-- **Movies** - Extensive collection of the latest and classic films
-- **K-Dramas** - Popular Korean dramas with episode tracking
-- **Anime** - Wide selection of anime series and movies
-- **Multi-Episode Support** - Track and watch episodes seamlessly
+<div align="center">
 
-### 📱 **User Experience**
-- 🎨 **Beautiful UI** - Modern, intuitive interface with smooth animations
-- 🌙 **Dark Theme** - Eye-friendly dark mode optimized for binge-watching
-- 🔍 **Smart Search** - Find your favorite content quickly
+### 🎯 **What Makes FlixyGo Special?**
+
+</div>
+
+<table>
+<tr>
+<td width="50%">
+
+### 🎥 **Rich Content Library**
+- 🎬 **Movies** - Extensive collection of latest and classic films
+- 🇰🇷 **K-Dramas** - Popular Korean dramas with episode tracking
+- 🎌 **Anime** - Wide selection of anime series and movies
+- 📺 **Multi-Episode Support** - Seamlessly track and watch episodes
+
+</td>
+<td width="50%">
+
+### 📱 **Exceptional User Experience**
+- 🎨 **Beautiful UI** - Modern interface with smooth animations
+- 🌙 **Dark Theme** - Eye-friendly design for binge-watching
+- 🔍 **Smart Search** - Find content quickly with filters
 - ⭐ **Favorites** - Save and organize your favorite shows
-- 📝 **Comments** - Share your thoughts with the community
-- 👤 **User Profiles** - Personalize your streaming experience
 
-### 🎬 **Video Player**
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🎬 **Advanced Video Player**
 - 📺 **Full HD Playback** - High-quality video streaming
-- 🔄 **Landscape Mode** - Automatic rotation for fullscreen viewing
-- 🔒 **Screen Lock** - Prevent accidental touches during playback
-- ⏯️ **Playback Controls** - Play, pause, seek, rewind, and fast-forward
-- ⏭️ **Next Episode** - Automatic navigation to next episode
-- 🎚️ **Progress Tracking** - Resume watching from where you left off
+- 🔄 **Landscape Mode** - Auto-rotation for fullscreen
+- 🔒 **Screen Lock** - Prevent accidental touches
+- ⏯️ **Full Controls** - Play, pause, seek, rewind, fast-forward
+- ⏭️ **Auto Next Episode** - Seamless episode transitions
 
-### 🔐 **Authentication**
-- 📧 **Secure Login** - Email and password authentication
-- 🆕 **Sign Up** - Easy registration with username and password
+</td>
+<td width="50%">
+
+### 🔐 **Secure Authentication**
+- 📧 **Email Login** - Secure authentication system
+- 🆕 **Easy Sign Up** - Quick registration process
 - 🔄 **Password Recovery** - Reset forgotten passwords
-- 👁️ **Biometric Login** - Fingerprint authentication support
+- 👁️ **Biometric Login** - Fingerprint authentication
+- 💾 **Cloud Sync** - Powered by Supabase
 
-### 💾 **Data Management**
-- ☁️ **Cloud Sync** - Powered by Supabase for seamless data synchronization
-- 📊 **Watch History** - Track your viewing progress
-- 🔖 **Favorites List** - Quick access to saved content
-- 💬 **Comment System** - Engage with other users
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+### 🌟 **Additional Features**
+
+![Watch History](https://img.shields.io/badge/📊-Watch_History-blue?style=for-the-badge)
+![Favorites](https://img.shields.io/badge/🔖-Favorites_List-purple?style=for-the-badge)
+![Comments](https://img.shields.io/badge/💬-Comment_System-green?style=for-the-badge)
+![Profiles](https://img.shields.io/badge/👤-User_Profiles-orange?style=for-the-badge)
+![Multi_Platform](https://img.shields.io/badge/🌐-Multi_Platform-red?style=for-the-badge)
+
+</div>
 
 ---
 
@@ -280,73 +335,204 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### **Digital Aegis Team**
 
-<table align="center">
+<div align="center">
+
+<table>
   <tr>
-    <td align="center">
-      <img src="https://ui-avatars.com/api/?name=Luthfi+Nur+Zaidan&background=DE903A&color=fff&size=100" alt="Luthfi Nur Zaidan" width="100" /><br />
-      <b>Luthfi Nur Zaidan</b><br />
-      <sub>Lead Developer</sub><br />
+    <td align="center" width="50%">
       <a href="https://instagram.com/lxthfyy_">
-        <img src="https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white" />
+        <img src="https://github.com/lxthfyy.png?size=150" alt="Luthfi Nur Zaidan" width="150" height="150" style="border-radius: 50%; border: 4px solid #DE903A;" onerror="this.src='https://ui-avatars.com/api/?name=Luthfi+Nur+Zaidan&background=DE903A&color=fff&size=150&rounded=true'" />
       </a>
+      <br /><br />
+      <h3>Luthfi Nur Zaidan</h3>
+      <p><b>🚀 Lead Developer & Founder</b></p>
+      <p><i>Full-stack developer specializing in Flutter & backend architecture</i></p>
+      <br />
+      <a href="https://instagram.com/lxthfyy_">
+        <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+      </a>
+      <br />
+      <sub>@lxthfyy_</sub>
     </td>
-    <td align="center">
-      <img src="https://ui-avatars.com/api/?name=Abhipraya+Samboga&background=DE903A&color=fff&size=100" alt="Abhipraya Samboga" width="100" /><br />
-      <b>Abhipraya Samboga</b><br />
-      <sub>UI/UX Designer</sub><br />
+    <td align="center" width="50%">
       <a href="https://instagram.com/_noctyr">
-        <img src="https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white" />
+        <img src="https://github.com/_noctyr.png?size=150" alt="Abhipraya Samboga" width="150" height="150" style="border-radius: 50%; border: 4px solid #DE903A;" onerror="this.src='https://ui-avatars.com/api/?name=Abhipraya+Samboga&background=DE903A&color=fff&size=150&rounded=true'" />
       </a>
+      <br /><br />
+      <h3>Abhipraya Samboga</h3>
+      <p><b>🎨 UI/UX Designer</b></p>
+      <p><i>Creating beautiful and intuitive user experiences</i></p>
+      <br />
+      <a href="https://instagram.com/_noctyr">
+        <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+      </a>
+      <br />
+      <sub>@_noctyr</sub>
     </td>
   </tr>
 </table>
 
-### 📧 Contact
+</div>
 
-- **Email:** Digitalaegis12@gmail.com
-- **Instagram:** [@lxthfyy_](https://instagram.com/lxthfyy_) | [@_noctyr](https://instagram.com/_noctyr)
+### 📧 Contact Us
 
----
+<div align="center">
 
-## 🤝 Contributing
+**Have questions or feedback? We'd love to hear from you!**
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:Digitalaegis12@gmail.com)
+[![Instagram - Luthfi](https://img.shields.io/badge/Luthfi-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/lxthfyy_)
+[![Instagram - Abhi](https://img.shields.io/badge/Abhipraya-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/_noctyr)
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+**📬 Email:** [Digitalaegis12@gmail.com](mailto:Digitalaegis12@gmail.com)
 
----
-
-## ⭐ Star History
-
-If you like this project, please give it a ⭐ on GitHub!
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/flixygo&type=Date)](https://star-history.com/#yourusername/flixygo&Date)
-
----
-
-## 🙏 Acknowledgments
-
-- [Flutter Team](https://flutter.dev/) - Amazing cross-platform framework
-- [Supabase](https://supabase.com/) - Backend infrastructure
-- [Media Kit](https://github.com/alexmercerind/media_kit) - Video playback library
-- [Google Fonts](https://fonts.google.com/) - Beautiful typography
-- All content providers and sources
+</div>
 
 ---
 
 <div align="center">
 
-### Made with ❤️ by Digital Aegis Team
+## 📊 Project Stats
 
-**© 2024 FlixyGo. All Rights Reserved.**
+<p>
+  <img src="https://img.shields.io/github/stars/yourusername/flixygo?style=for-the-badge&logo=github&color=yellow" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/yourusername/flixygo?style=for-the-badge&logo=github&color=blue" alt="Forks" />
+  <img src="https://img.shields.io/github/issues/yourusername/flixygo?style=for-the-badge&logo=github&color=red" alt="Issues" />
+  <img src="https://img.shields.io/github/license/yourusername/flixygo?style=for-the-badge&color=green" alt="License" />
+</p>
 
-[![Flutter](https://img.shields.io/badge/Built%20with-Flutter-02569B?style=flat&logo=flutter)](https://flutter.dev/)
-[![Dart](https://img.shields.io/badge/Powered%20by-Dart-0175C2?style=flat&logo=dart)](https://dart.dev/)
+<p>
+  <img src="https://img.shields.io/github/contributors/yourusername/flixygo?style=for-the-badge&color=orange" alt="Contributors" />
+  <img src="https://img.shields.io/github/last-commit/yourusername/flixygo?style=for-the-badge&color=purple" alt="Last Commit" />
+  <img src="https://img.shields.io/github/languages/top/yourusername/flixygo?style=for-the-badge&color=blue" alt="Top Language" />
+</p>
 
-[⬆ Back to Top](#-flixygo)
+</div>
+
+---
+
+## 🤝 Contributing
+
+<div align="center">
+
+**We welcome contributions from the community!** 🎉
+
+</div>
+
+Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**!
+
+### How to Contribute:
+
+1. 🍴 **Fork the Project**
+2. 🌿 **Create your Feature Branch**
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. 💾 **Commit your Changes**
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. 📤 **Push to the Branch**
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+5. 🎯 **Open a Pull Request**
+
+### Contribution Guidelines:
+
+- 📝 Write clear and descriptive commit messages
+- 🧪 Test your changes thoroughly
+- 📚 Update documentation as needed
+- 🎨 Follow the existing code style
+- 🐛 Report bugs using GitHub Issues
+- 💡 Suggest new features via Issues
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+---
+
+## ⭐ Star History
+
+<div align="center">
+
+**If you like this project, please give it a ⭐ on GitHub!**
+
+[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/flixygo&type=Date)](https://star-history.com/#yourusername/flixygo&Date)
+
+</div>
+
+---
+
+## 🙏 Acknowledgments
+
+<div align="center">
+
+We're grateful to these amazing projects and communities:
+
+</div>
+
+- 🦋 **[Flutter Team](https://flutter.dev/)** - Amazing cross-platform framework
+- 🗄️ **[Supabase](https://supabase.com/)** - Powerful backend infrastructure
+- 🎬 **[Media Kit](https://github.com/alexmercerind/media_kit)** - Excellent video playback library
+- 🔤 **[Google Fonts](https://fonts.google.com/)** - Beautiful typography (Poppins)
+- 🎨 **Open Source Community** - For inspiration and support
+- 💝 **All Contributors** - Thank you for your valuable contributions!
+
+---
+
+<div align="center">
+
+## 💖 Support the Project
+
+<p><b>If you find FlixyGo useful, consider giving it a star! ⭐</b></p>
+
+<p>
+  <a href="https://github.com/yourusername/flixygo">
+    <img src="https://img.shields.io/github/stars/yourusername/flixygo?style=social" alt="GitHub stars" />
+  </a>
+  <a href="https://github.com/yourusername/flixygo/fork">
+    <img src="https://img.shields.io/github/forks/yourusername/flixygo?style=social" alt="GitHub forks" />
+  </a>
+  <a href="https://github.com/yourusername/flixygo/watchers">
+    <img src="https://img.shields.io/github/watchers/yourusername/flixygo?style=social" alt="GitHub watchers" />
+  </a>
+</p>
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="assets/images/icon.png" alt="FlixyGo Logo" width="80" />
+
+### 🎬 Made with ❤️ and ☕ by **Digital Aegis Team**
+
+<p>
+  <b>© 2024 FlixyGo. All Rights Reserved.</b><br/>
+  <sub>Crafted with passion for movie lovers worldwide</sub>
+</p>
+
+<p>
+  <a href="https://flutter.dev">
+    <img src="https://img.shields.io/badge/Built%20with-Flutter-02569B?style=flat-square&logo=flutter" alt="Flutter" />
+  </a>
+  <a href="https://dart.dev">
+    <img src="https://img.shields.io/badge/Powered%20by-Dart-0175C2?style=flat-square&logo=dart" alt="Dart" />
+  </a>
+  <a href="https://supabase.com">
+    <img src="https://img.shields.io/badge/Backend-Supabase-3ECF8E?style=flat-square&logo=supabase" alt="Supabase" />
+  </a>
+</p>
+
+---
+
+<p>
+  <a href="#-flixygo">⬆ Back to Top</a>
+</p>
+
+<p>
+  <sub>🌟 Star us on GitHub — it motivates us a lot! 🌟</sub>
+</p>
 
 </div>

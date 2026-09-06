@@ -33,6 +33,9 @@ dependencies:
   
   # ── Biometric authentication for app lock ──
   local_auth: ^2.3.0
+  
+  # ── Package info for getting app version ──
+  package_info_plus: ^8.1.2
 
 dev_dependencies:
   flutter_test:

@@ -1,10 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import '../theme/app_theme.dart';
 
-class AboutAppPage extends StatelessWidget {
+class AboutAppPage extends StatefulWidget {
   const AboutAppPage({super.key});
+
+  @override
+  State<AboutAppPage> createState() => _AboutAppPageState();
+}
+
+class _AboutAppPageState extends State<AboutAppPage> {
+  String _version = 'Loading...';
+  String _buildNumber = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPackageInfo();
+  }
+
+  Future<void> _loadPackageInfo() async {
+    final packageInfo = await PackageInfo.fromPlatform();
+    if (mounted) {
+      setState(() {
+        _version = packageInfo.version;
+        _buildNumber = packageInfo.buildNumber;
+      });
+    }
+  }
 
   Future<void> _launchInstagram(String username) async {
     final Uri instagramUrl = Uri.parse('https://www.instagram.com/$username');
@@ -113,7 +138,7 @@ class AboutAppPage extends StatelessWidget {
 
                   // Version
                   Text(
-                    'Version 1.0.0',
+                    'Version $_version${_buildNumber.isNotEmpty ? ' ($_buildNumber)' : ''}',
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -368,6 +393,9 @@ class AboutAppPage extends StatelessWidget {
     required String instagramUsername,
     required VoidCallback onTap,
   }) {
+    // Get profile photo URL from Instagram username
+    final String profilePhotoUrl = _getInstagramProfilePhotoUrl(instagramUsername);
+    
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -382,17 +410,45 @@ class AboutAppPage extends StatelessWidget {
         ),
         child: Row(
           children: [
+            // Profile Photo from Instagram or Fallback Icon
             Container(
-              width: 48,
-              height: 48,
+              width: 56,
+              height: 56,
               decoration: BoxDecoration(
                 color: const Color(0xFFDE903A).withOpacity(0.15),
                 shape: BoxShape.circle,
+                border: Border.all(
+                  color: const Color(0xFFDE903A).withOpacity(0.3),
+                  width: 2,
+                ),
               ),
-              child: Icon(
-                icon,
-                color: const Color(0xFFDE903A),
-                size: 24,
+              child: ClipOval(
+                child: Image.network(
+                  profilePhotoUrl,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) => Icon(
+                    icon,
+                    color: const Color(0xFFDE903A),
+                    size: 28,
+                  ),
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Center(
+                      child: SizedBox(
+                        width: 24,
+                        height: 24,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: const Color(0xFFDE903A),
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  loadingProgress.expectedTotalBytes!
+                              : null,
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             const SizedBox(width: 14),
@@ -448,5 +504,13 @@ class AboutAppPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  /// Get Instagram profile photo URL using a third-party service
+  /// Note: This may break if the service becomes unavailable
+  String _getInstagramProfilePhotoUrl(String username) {
+    // Using InstaDP service to fetch profile photos (no authentication required)
+    // Alternative: Store profile photos locally in assets/images/team/
+    return 'https://instadp.io/fullsize/$username';
   }
 }
