@@ -341,7 +341,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
   <tr>
     <td align="center" width="50%">
       <a href="https://instagram.com/lxthfyy_">
-        <img src="https://github.com/lxthfyy.png?size=150" alt="Luthfi Nur Zaidan" width="150" height="150" style="border-radius: 50%; border: 4px solid #DE903A;" onerror="this.src='https://ui-avatars.com/api/?name=Luthfi+Nur+Zaidan&background=DE903A&color=fff&size=150&rounded=true'" />
+        <img src="https://instagram.com/lxthfyy.png?size=150" alt="Luthfi Nur Zaidan" width="150" height="150" style="border-radius: 50%; border: 4px solid #DE903A;" onerror="this.src='https://ui-avatars.com/api/?name=Luthfi+Nur+Zaidan&background=DE903A&color=fff&size=150&rounded=true'" />
       </a>
       <br /><br />
       <h3>Luthfi Nur Zaidan</h3>
@@ -356,7 +356,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
     </td>
     <td align="center" width="50%">
       <a href="https://instagram.com/_noctyr">
-        <img src="https://github.com/_noctyr.png?size=150" alt="Abhipraya Samboga" width="150" height="150" style="border-radius: 50%; border: 4px solid #DE903A;" onerror="this.src='https://ui-avatars.com/api/?name=Abhipraya+Samboga&background=DE903A&color=fff&size=150&rounded=true'" />
+        <img src="https://instagram.com/_noctyr.png?size=150" alt="Abhipraya Samboga" width="150" height="150" style="border-radius: 50%; border: 4px solid #DE903A;" onerror="this.src='https://ui-avatars.com/api/?name=Abhipraya+Samboga&background=DE903A&color=fff&size=150&rounded=true'" />
       </a>
       <br /><br />
       <h3>Abhipraya Samboga</h3>
@@ -457,7 +457,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 **If you like this project, please give it a ⭐ on GitHub!**
 
-[![Star History Chart](https://api.star-history.com/svg?repos=akamuRashina/flixygo&type=Date)](https://star-history.com/#akamuRashina/flixygo&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/flixygo&type=Date)](https://star-history.com/#yourusername/flixygo&Date)
 
 </div>
 
