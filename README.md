@@ -457,7 +457,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 **If you like this project, please give it a ⭐ on GitHub!**
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/flixygo&type=Date)](https://star-history.com/#yourusername/flixygo&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=akamuRashina/flixygo&type=Date)](https://star-history.com/#akamuRashina/flixygo&Date)
 
 </div>
 
