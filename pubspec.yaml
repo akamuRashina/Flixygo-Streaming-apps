@@ -31,9 +31,6 @@ dependencies:
   # ── Added for profile photo (works on Windows/macOS/Linux too, unlike image_picker) ──
   file_picker: ^8.1.2
   
-  # ── Biometric authentication for app lock ──
-  local_auth: ^2.3.0
-  
   # ── Package info for getting app version ──
   package_info_plus: ^8.1.2
 

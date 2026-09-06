@@ -102,7 +102,6 @@
 - 📧 **Email Login** - Secure authentication system
 - 🆕 **Easy Sign Up** - Quick registration process
 - 🔄 **Password Recovery** - Reset forgotten passwords
-- 👁️ **Biometric Login** - Fingerprint authentication
 - 💾 **Cloud Sync** - Powered by Supabase
 
 </td>
