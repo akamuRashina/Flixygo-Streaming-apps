@@ -41,13 +41,13 @@
 </p>
 
 <p>
-  <a href="https://github.com/yourusername/flixygo/releases">
+  <a href="https://github.com/akamuRashina/flixygo/releases">
     <img src="https://img.shields.io/badge/Download-APK-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
   </a>
-  <a href="https://github.com/yourusername/flixygo/issues">
+  <a href="https://github.com/akamuRashina/flixygo/issues">
     <img src="https://img.shields.io/badge/Report-Bug-red?style=for-the-badge&logo=github&logoColor=white" />
   </a>
-  <a href="https://github.com/yourusername/flixygo/issues">
+  <a href="https://github.com/akamuRashina/flixygo/issues">
     <img src="https://img.shields.io/badge/Request-Feature-blue?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
@@ -159,7 +159,7 @@
 ### 📦 Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/flixygo.git
+git clone https://github.com/akamuRashina/flixygo.git
 cd flixygo
 ```
 
@@ -395,16 +395,16 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 📊 Project Stats
 
 <p>
-  <img src="https://img.shields.io/github/stars/yourusername/flixygo?style=for-the-badge&logo=github&color=yellow" alt="Stars" />
-  <img src="https://img.shields.io/github/forks/yourusername/flixygo?style=for-the-badge&logo=github&color=blue" alt="Forks" />
-  <img src="https://img.shields.io/github/issues/yourusername/flixygo?style=for-the-badge&logo=github&color=red" alt="Issues" />
-  <img src="https://img.shields.io/github/license/yourusername/flixygo?style=for-the-badge&color=green" alt="License" />
+  <img src="https://img.shields.io/github/stars/akamuRashina/flixygo?style=for-the-badge&logo=github&color=yellow" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/akamuRashina/flixygo?style=for-the-badge&logo=github&color=blue" alt="Forks" />
+  <img src="https://img.shields.io/github/issues/akamuRashina/flixygo?style=for-the-badge&logo=github&color=red" alt="Issues" />
+  <img src="https://img.shields.io/github/license/akamuRashina/flixygo?style=for-the-badge&color=green" alt="License" />
 </p>
 
 <p>
-  <img src="https://img.shields.io/github/contributors/yourusername/flixygo?style=for-the-badge&color=orange" alt="Contributors" />
-  <img src="https://img.shields.io/github/last-commit/yourusername/flixygo?style=for-the-badge&color=purple" alt="Last Commit" />
-  <img src="https://img.shields.io/github/languages/top/yourusername/flixygo?style=for-the-badge&color=blue" alt="Top Language" />
+  <img src="https://img.shields.io/github/contributors/akamuRashina/flixygo?style=for-the-badge&color=orange" alt="Contributors" />
+  <img src="https://img.shields.io/github/last-commit/akamuRashina/flixygo?style=for-the-badge&color=purple" alt="Last Commit" />
+  <img src="https://img.shields.io/github/languages/top/akamuRashina/flixygo?style=for-the-badge&color=blue" alt="Top Language" />
 </p>
 
 </div>
@@ -457,7 +457,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 **If you like this project, please give it a ⭐ on GitHub!**
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/flixygo&type=Date)](https://star-history.com/#yourusername/flixygo&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=akamuRashina/flixygo&type=Date)](https://star-history.com/#akamuRashina/flixygo&Date)
 
 </div>
 
@@ -487,14 +487,14 @@ We're grateful to these amazing projects and communities:
 <p><b>If you find FlixyGo useful, consider giving it a star! ⭐</b></p>
 
 <p>
-  <a href="https://github.com/yourusername/flixygo">
-    <img src="https://img.shields.io/github/stars/yourusername/flixygo?style=social" alt="GitHub stars" />
+  <a href="https://github.com/akamuRashina/flixygo">
+    <img src="https://img.shields.io/github/stars/akamuRashina/flixygo?style=social" alt="GitHub stars" />
   </a>
-  <a href="https://github.com/yourusername/flixygo/fork">
-    <img src="https://img.shields.io/github/forks/yourusername/flixygo?style=social" alt="GitHub forks" />
+  <a href="https://github.com/akamuRashina/flixygo/fork">
+    <img src="https://img.shields.io/github/forks/akamuRashina/flixygo?style=social" alt="GitHub forks" />
   </a>
-  <a href="https://github.com/yourusername/flixygo/watchers">
-    <img src="https://img.shields.io/github/watchers/yourusername/flixygo?style=social" alt="GitHub watchers" />
+  <a href="https://github.com/akamuRashina/flixygo/watchers">
+    <img src="https://img.shields.io/github/watchers/akamuRashina/flixygo?style=social" alt="GitHub watchers" />
   </a>
 </p>
 
