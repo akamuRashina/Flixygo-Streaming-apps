@@ -137,6 +137,49 @@ class ContentService {
     }
   }
 
+  /// Search with optional content type filter
+  Future<List<MovieItem>> searchContent({
+    required String query,
+    String? contentType,
+  }) async {
+    if (query.trim().isEmpty) return [];
+    try {
+      final results = <MovieItem>[];
+      
+      // Determine which types to search
+      List<ContentType> typesToSearch;
+      if (contentType == null) {
+        typesToSearch = ContentType.values;
+      } else {
+        switch (contentType) {
+          case 'film':
+            typesToSearch = [ContentType.movie];
+            break;
+          case 'kdrama':
+            typesToSearch = [ContentType.kdrama];
+            break;
+          case 'anime':
+            typesToSearch = [ContentType.anime];
+            break;
+          default:
+            typesToSearch = ContentType.values;
+        }
+      }
+
+      for (final type in typesToSearch) {
+        final rows = await _client
+            .from(_tableFor[type]!)
+            .select()
+            .ilike('title', '%${query.trim()}%')
+            .limit(20);
+        results.addAll((rows as List).cast<Map<String, dynamic>>().map((r) => _rowToItem(r, type)));
+      }
+      return results;
+    } catch (e) {
+      throw wrapSupabaseError(e);
+    }
+  }
+
   Future<ContentDetail> getDetail({required ContentType type, required String slug}) async {
     try {
       final row = await _client.from(_tableFor[type]!).select().eq('slug', slug).single();

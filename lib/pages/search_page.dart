@@ -2,7 +2,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_theme.dart';
-import 'home_page.dart';
+import '../models/movie_item.dart';
+import '../services/content_service.dart';
 import 'movie_detail_page.dart';
 import 'anime_kdrama_detail_page.dart';
 
@@ -19,16 +20,9 @@ class _SearchPageState extends State<SearchPage> {
   final TextEditingController _searchController = TextEditingController();
   List<MovieItem> _searchResults = [];
   bool _isSearching = false;
+  bool _isLoading = false;
+  String? _searchError;
   String _selectedFilter = 'Semua'; // Semua, Film, K-Drama, Anime
-
-  // Combined all content for search
-  final List<MovieItem> _allContent = [
-    ...films,
-    ...kdramas,
-    ...animes,
-    ...latestMovies,
-    ...recentlyWatched,
-  ];
 
   @override
   void initState() {
@@ -45,45 +39,53 @@ class _SearchPageState extends State<SearchPage> {
     super.dispose();
   }
 
-  void _performSearch(String query) {
+  Future<void> _performSearch(String query) async {
     if (query.trim().isEmpty) {
       setState(() {
         _searchResults = [];
         _isSearching = false;
+        _isLoading = false;
+        _searchError = null;
       });
       return;
     }
 
     setState(() {
       _isSearching = true;
+      _isLoading = true;
+      _searchError = null;
     });
 
-    // Filter by search query
-    List<MovieItem> results = _allContent.where((item) {
-      return item.title.toLowerCase().contains(query.toLowerCase());
-    }).toList();
+    try {
+      // Determine content type filter
+      String? contentType;
+      if (_selectedFilter == 'Film') {
+        contentType = 'film';
+      } else if (_selectedFilter == 'K-Drama') {
+        contentType = 'kdrama';
+      } else if (_selectedFilter == 'Anime') {
+        contentType = 'anime';
+      }
 
-    // Apply content type filter
-    if (_selectedFilter != 'Semua') {
-      results = results.where((item) {
-        if (_selectedFilter == 'Film') {
-          return item.contentType == ContentType.movie;
-        } else if (_selectedFilter == 'K-Drama') {
-          return item.contentType == ContentType.kdrama;
-        } else if (_selectedFilter == 'Anime') {
-          return item.contentType == ContentType.anime;
-        }
-        return true;
-      }).toList();
+      // Fetch search results from backend
+      final results = await ContentService.instance.searchContent(
+        query: query,
+        contentType: contentType,
+      );
+
+      if (!mounted) return;
+
+      setState(() {
+        _searchResults = results;
+        _isLoading = false;
+      });
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _searchError = e.toString();
+        _isLoading = false;
+      });
     }
-
-    // Remove duplicates based on title
-    final seen = <String>{};
-    results = results.where((item) => seen.add(item.title)).toList();
-
-    setState(() {
-      _searchResults = results;
-    });
   }
 
   void _clearSearch() {
@@ -108,7 +110,7 @@ class _SearchPageState extends State<SearchPage> {
                 color: const Color(0xFF1A1209),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.3),
+                    color: Colors.black.withValues(alpha: 0.3),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
                   ),
@@ -126,10 +128,10 @@ class _SearchPageState extends State<SearchPage> {
                           width: 44,
                           height: 44,
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.1),
+                            color: Colors.white.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(22),
                             border: Border.all(
-                              color: Colors.white.withOpacity(0.2),
+                              color: Colors.white.withValues(alpha: 0.2),
                               width: 1,
                             ),
                           ),
@@ -147,10 +149,10 @@ class _SearchPageState extends State<SearchPage> {
                         child: Container(
                           height: 48,
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.08),
+                            color: Colors.white.withValues(alpha: 0.08),
                             borderRadius: BorderRadius.circular(24),
                             border: Border.all(
-                              color: Colors.white.withOpacity(0.18),
+                              color: Colors.white.withValues(alpha: 0.18),
                               width: 1,
                             ),
                           ),
@@ -175,7 +177,7 @@ class _SearchPageState extends State<SearchPage> {
                                   decoration: InputDecoration(
                                     hintText: 'Cari film, k-drama, anime...',
                                     hintStyle: GoogleFonts.poppins(
-                                      color: Colors.white.withOpacity(0.4),
+                                      color: Colors.white.withValues(alpha: 0.4),
                                       fontSize: 15,
                                     ),
                                     border: InputBorder.none,
@@ -270,12 +272,12 @@ class _SearchPageState extends State<SearchPage> {
         decoration: BoxDecoration(
           color: isSelected
               ? const Color(0xFF865D3B)
-              : Colors.white.withOpacity(0.08),
+              : Colors.white.withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: isSelected
                 ? const Color(0xFF865D3B)
-                : Colors.white.withOpacity(0.18),
+                : Colors.white.withValues(alpha: 0.18),
             width: 1,
           ),
         ),
@@ -292,6 +294,24 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget _buildSearchResults() {
+    // Loading state
+    if (_isLoading) {
+      return const Center(
+        child: CircularProgressIndicator(
+          color: Color(0xFF865D3B),
+        ),
+      );
+    }
+
+    // Error state
+    if (_searchError != null) {
+      return _buildEmptyState(
+        icon: Icons.error_outline_rounded,
+        title: 'Terjadi Kesalahan',
+        subtitle: _searchError!,
+      );
+    }
+
     // Empty state - no search yet
     if (!_isSearching && _searchResults.isEmpty && _searchController.text.isEmpty) {
       return _buildEmptyState(
@@ -365,17 +385,17 @@ class _SearchPageState extends State<SearchPage> {
               width: 100,
               height: 100,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.05),
+                color: Colors.white.withValues(alpha: 0.05),
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: Colors.white.withOpacity(0.1),
+                  color: Colors.white.withValues(alpha: 0.1),
                   width: 2,
                 ),
               ),
               child: Icon(
                 icon,
                 size: 50,
-                color: Colors.white.withOpacity(0.3),
+                color: Colors.white.withValues(alpha: 0.3),
               ),
             ),
             const SizedBox(height: 24),
@@ -384,7 +404,7 @@ class _SearchPageState extends State<SearchPage> {
               style: GoogleFonts.poppins(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
-                color: Colors.white.withOpacity(0.8),
+                color: Colors.white.withValues(alpha: 0.8),
               ),
               textAlign: TextAlign.center,
             ),
@@ -394,7 +414,7 @@ class _SearchPageState extends State<SearchPage> {
               style: GoogleFonts.poppins(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
-                color: Colors.white.withOpacity(0.5),
+                color: Colors.white.withValues(alpha: 0.5),
                 height: 1.5,
               ),
               textAlign: TextAlign.center,
@@ -434,7 +454,7 @@ class _SearchPageState extends State<SearchPage> {
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.4),
+                    color: Colors.black.withValues(alpha: 0.4),
                     blurRadius: 8,
                     offset: const Offset(0, 4),
                   ),
@@ -477,7 +497,7 @@ class _SearchPageState extends State<SearchPage> {
                     end: Alignment.bottomCenter,
                     colors: [
                       Colors.transparent,
-                      Colors.black.withOpacity(0.7),
+                      Colors.black.withValues(alpha: 0.7),
                     ],
                     stops: const [0.5, 1.0],
                   ),
