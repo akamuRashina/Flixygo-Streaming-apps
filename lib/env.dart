@@ -1,6 +1,4 @@
-/// Supabase credentials, injected at build/run time via --dart-define
-/// (see SUPABASE_SETUP.md). Never hardcode real values here and never
-/// commit `supabase-keys.json` to source control.
+/// Environment configuration injected via --dart-define or defaults.
 class Env {
   static const supabaseUrl = String.fromEnvironment(
     'SUPABASE_URL',
@@ -10,6 +8,11 @@ class Env {
   static const supabaseAnonKey = String.fromEnvironment(
     'SUPABASE_ANON_KEY',
     defaultValue: '',
+  );
+
+  static const apiBaseUrl = String.fromEnvironment(
+    'API_BASE_URL',
+    defaultValue: 'https://flixy-go.vercel.app',
   );
 
   static bool get isConfigured =>
