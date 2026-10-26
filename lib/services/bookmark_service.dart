@@ -49,11 +49,14 @@ class BookmarkService {
 
         final table = type == 'movie' ? 'movies' : type;
         final slugs = matching.map((r) => r['content_slug'] as String).toSet().toList();
-        final content = await _client
-            .from(table)
-            .select('slug, title, poster, badge, genres')
-            .filter('slug', 'in', '(${slugs.join(',')})');
-        final bySlug = {for (final c in content) c['slug'] as String: c};
+        Map<String, dynamic> bySlug = {};
+        try {
+          final content = await _client
+              .from(table)
+              .select('slug, title, poster, badge, genres')
+              .filter('slug', 'in', '(${slugs.join(',')})');
+          bySlug = {for (final c in content) c['slug'] as String: c};
+        } catch (_) {}
 
         for (final r in matching) {
           final c = bySlug[r['content_slug']];

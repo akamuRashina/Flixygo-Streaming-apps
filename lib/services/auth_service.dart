@@ -20,34 +20,44 @@ class AuthService {
 
   static final AuthService instance = AuthService._();
 
-  SupabaseClient get _client => Supabase.instance.client;
+  SupabaseClient? get _client {
+    try {
+      return Supabase.instance.client;
+    } catch (_) {
+      return null;
+    }
+  }
 
   String _fakeEmail(String username) =>
       '${username.trim().toLowerCase()}@flixygo.app';
 
   Future<String?> getToken() async {
-    return _client.auth.currentSession?.accessToken;
+    return _client?.auth.currentSession?.accessToken;
   }
 
   Future<String?> getUsername() async {
-    final user = _client.auth.currentUser;
+    final user = _client?.auth.currentUser;
     final metaUsername = user?.userMetadata?['username']?.toString();
     if (metaUsername != null && metaUsername.isNotEmpty) return metaUsername;
     return user?.email?.split('@').first;
   }
 
   Future<String?> getUserId() async {
-    return _client.auth.currentUser?.id;
+    return _client?.auth.currentUser?.id;
   }
 
   Future<bool> isLoggedIn() async {
-    return _client.auth.currentSession != null;
+    return _client?.auth.currentSession != null;
   }
 
   /// Throws [ApiException] on failure (e.g. username already taken).
   Future<void> register({required String username, required String password}) async {
+    final client = _client;
+    if (client == null) {
+      throw ApiException('Supabase belum terhubung.');
+    }
     try {
-      final res = await _client.auth.signUp(
+      final res = await client.auth.signUp(
         email: _fakeEmail(username),
         password: password,
         data: {'username': username.trim()},
@@ -69,8 +79,12 @@ class AuthService {
 
   /// Throws [ApiException] on failure (e.g. invalid credentials).
   Future<void> login({required String username, required String password}) async {
+    final client = _client;
+    if (client == null) {
+      throw ApiException('Supabase belum terhubung.');
+    }
     try {
-      await _client.auth.signInWithPassword(
+      await client.auth.signInWithPassword(
         email: _fakeEmail(username),
         password: password,
       );
@@ -83,6 +97,6 @@ class AuthService {
   }
 
   Future<void> logout() async {
-    await _client.auth.signOut();
+    await _client?.auth.signOut();
   }
 }

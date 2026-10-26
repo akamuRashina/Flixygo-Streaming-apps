@@ -19,8 +19,9 @@ void main() async {
     // Continue anyway - some platforms may not need it
   }
 
-  // Check Supabase configuration only if not in release mode without keys
-  if (!kIsWeb && !Platform.environment.containsKey('FLUTTER_TEST')) {
+  // Check Supabase configuration (skip only during flutter tests)
+  final isTest = !kIsWeb && Platform.environment.containsKey('FLUTTER_TEST');
+  if (!isTest) {
     if (!Env.isConfigured) {
       // In release mode, show error screen instead of crashing
       runApp(const SupabaseErrorApp());
